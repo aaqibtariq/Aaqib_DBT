@@ -1,4 +1,4 @@
-version: 3
+version: 5
 
 
 models:
@@ -16,6 +16,15 @@ models:
       - name: emp_salary
         tests: 
           - value_check
+  - name: customer
+    description: "DBT model for customer table"
+  - name: customer_vw
+    description: "DBT model for customer table view"
+  - name: sales
+    description: :DBT Model for the sales table"
+  - name: product
+    description: "DBT Model for the product table"
+
    
    
 sources:
@@ -24,3 +33,18 @@ sources:
     schema: PUBLIC
     tables:
       - name: EMPLOYEE_RAW
+  - name: customer
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: CUSTOMER_SRC
+  - name: sales
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: SALES_SRC
+  - name: product
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PRODUCT_SRC
